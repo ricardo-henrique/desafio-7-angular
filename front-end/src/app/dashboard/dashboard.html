@@ -73,13 +73,46 @@
     <tbody>
       <tr>
         <th>
-          <input class="form-control border border-primary" type="text" />
+          <form [formGroup]="vinForm">
+            <input
+              class="form-control border border-primary"
+              type="text"
+              [formControl]="vinForm.controls.vin"
+            />
+          </form>
         </th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
+        <!-- @if (carVin) {
+        <th>{{ carVin.odometro }}</th>
+        <th>{{ carVin.nivelCombustivel }}</th>
+        <th>{{ carVin.status }}</th>
+        <th>{{ carVin.lat }}</th>
+        <th>{{ carVin.long }}</th>
+        } -->
+        <th>
+          @if (carVin) {
+          {{ carVin.odometro }}
+          }
+        </th>
+        <th>
+          @if (carVin) {
+          {{ carVin.nivelCombustivel }}
+          }
+        </th>
+        <th>
+          @if (carVin) {
+          {{ carVin.status }}
+          }
+        </th>
+        <th>
+          @if (carVin) {
+          {{ carVin.lat }}
+          }
+        </th>
+        <th>
+          @if (carVin) {
+          {{ carVin.long }}
+          }
+        </th>
       </tr>
     </tbody>
   </table>
